@@ -1134,3 +1134,145 @@
 2026-11-15 16:21:10 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_20261115_105110_9e9c92', 'pipeline_status': 'SUCCESS', 'input_count': 1, 'valid_count': 1, 'rejected_count': 0, 'duplicate_count': 0, 'output_count': 1, 'execution_duration': 0.0307}
 2026-11-15 16:21:10 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\AppData\Local\Temp\pytest-of-lokes\pytest-14\test_database_transaction_roll0\rollback_test.db
 2026-11-15 16:21:10 [ERROR] [ecommerce_pipeline.database] Transaction failed and was rolled back: Simulated mid-transaction failure
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\AppData\Local\Temp\pytest-of-lokes\pytest-15\test_rerun_same_input_is_idemp0\idempotency_test.db
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_1] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 5 rows from orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_1] Validation complete: 5 valid, 0 quarantined, 0 duplicates detected.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_1] Pipeline completed with status: SUCCESS
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_1', 'pipeline_status': 'SUCCESS', 'input_count': 5, 'valid_count': 5, 'rejected_count': 0, 'duplicate_count': 0, 'output_count': 5, 'execution_duration': 0.0242}
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_2] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 5 rows from orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_2] Validation complete: 5 valid, 0 quarantined, 0 duplicates detected.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_2] Pipeline completed with status: SUCCESS
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_2', 'pipeline_status': 'SUCCESS', 'input_count': 5, 'valid_count': 5, 'rejected_count': 0, 'duplicate_count': 0, 'output_count': 5, 'execution_duration': 0.0197}
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\AppData\Local\Temp\pytest-of-lokes\pytest-15\test_order_lifecycle_update_an0\idempotency_test.db
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_v1] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: order_v1.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from order_v1.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_v1] Validation complete: 1 valid, 0 quarantined, 0 duplicates detected.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_v1] Pipeline completed with status: SUCCESS
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_v1', 'pipeline_status': 'SUCCESS', 'input_count': 1, 'valid_count': 1, 'rejected_count': 0, 'duplicate_count': 0, 'output_count': 1, 'execution_duration': 0.0223}
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_v2] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: order_v2.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from order_v2.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_v2] Validation complete: 1 valid, 0 quarantined, 0 duplicates detected.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_v2] Pipeline completed with status: SUCCESS
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_v2', 'pipeline_status': 'SUCCESS', 'input_count': 1, 'valid_count': 1, 'rejected_count': 0, 'duplicate_count': 0, 'output_count': 1, 'execution_duration': 0.0177}
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\AppData\Local\Temp\pytest-of-lokes\pytest-15\test_retry_after_failure0\idempotency_test.db
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_fail] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: bad.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from bad.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_fail] Validation complete: 0 valid, 1 quarantined, 0 duplicates detected.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_fail] Pipeline completed with status: FAILED
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_fail', 'pipeline_status': 'FAILED', 'input_count': 1, 'valid_count': 0, 'rejected_count': 1, 'duplicate_count': 0, 'output_count': 0, 'execution_duration': 0.0209}
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_retry] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: good.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from good.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_retry] Validation complete: 1 valid, 0 quarantined, 0 duplicates detected.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_retry] Pipeline completed with status: SUCCESS
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_retry', 'pipeline_status': 'SUCCESS', 'input_count': 1, 'valid_count': 1, 'rejected_count': 0, 'duplicate_count': 0, 'output_count': 1, 'execution_duration': 0.0181}
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from valid.csv
+2026-11-15 17:00:10 [WARNING] [ecommerce_pipeline.ingestion] Source file is empty (0 bytes): empty.csv
+2026-11-15 17:00:10 [WARNING] [ecommerce_pipeline.ingestion] File header_only.csv contains header only, zero data rows.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\AppData\Local\Temp\pytest-of-lokes\pytest-15\test_pipeline_happy_path0\test_ecommerce.db
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_e5aa7b] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 2 rows from orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_e5aa7b] Validation complete: 2 valid, 0 quarantined, 0 duplicates detected.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_e5aa7b] Pipeline completed with status: SUCCESS
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_20261115_113010_e5aa7b', 'pipeline_status': 'SUCCESS', 'input_count': 2, 'valid_count': 2, 'rejected_count': 0, 'duplicate_count': 0, 'output_count': 2, 'execution_duration': 0.0248}
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\AppData\Local\Temp\pytest-of-lokes\pytest-15\test_pipeline_empty_orders_fil0\test_ecommerce.db
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_7ff780] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: empty_orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [WARNING] [ecommerce_pipeline.ingestion] File empty_orders.csv contains header only, zero data rows.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_7ff780] Handled empty orders input file.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\AppData\Local\Temp\pytest-of-lokes\pytest-15\test_pipeline_partial_failure0\test_ecommerce.db
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_73b64f] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: partial_orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 2 rows from partial_orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_73b64f] Validation complete: 1 valid, 1 quarantined, 0 duplicates detected.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_73b64f] Pipeline completed with status: PARTIAL_SUCCESS
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_20261115_113010_73b64f', 'pipeline_status': 'PARTIAL_SUCCESS', 'input_count': 2, 'valid_count': 1, 'rejected_count': 1, 'duplicate_count': 0, 'output_count': 1, 'execution_duration': 0.0299}
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\AppData\Local\Temp\pytest-of-lokes\pytest-15\test_pipeline_corrupted_schema0\test_ecommerce.db
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_98c3eb] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: corrupted_schema.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from corrupted_schema.csv
+2026-11-15 17:00:10 [ERROR] [ecommerce_pipeline] [run_20261115_113010_98c3eb] Schema corruption: missing required columns ['order_id', 'customer_id', 'order_amount', 'order_status', 'order_date', 'updated_at']
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\AppData\Local\Temp\pytest-of-lokes\pytest-15\test_pipeline_late_arriving_re0\test_ecommerce.db
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_f61834] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Orders File: late_orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from customers.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Loaded 1 valid customers into database.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Validator loaded with 1 valid customer records.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.ingestion] Ingested 1 rows from late_orders.csv
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_f61834] Validation complete: 1 valid, 0 quarantined, 0 duplicates detected.
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] [run_20261115_113010_f61834] Pipeline completed with status: SUCCESS
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_20261115_113010_f61834', 'pipeline_status': 'SUCCESS', 'input_count': 1, 'valid_count': 1, 'rejected_count': 0, 'duplicate_count': 0, 'output_count': 1, 'execution_duration': 0.0295}
+2026-11-15 17:00:10 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\AppData\Local\Temp\pytest-of-lokes\pytest-15\test_database_transaction_roll0\rollback_test.db
+2026-11-15 17:00:10 [ERROR] [ecommerce_pipeline.database] Transaction failed and was rolled back: Simulated mid-transaction failure
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline.database] Database schema initialized successfully at C:\Users\lokes\Downloads\project\output\ecommerce.db
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline] [run_20261115_113016_e973e3] STARTING ORDER PIPELINE EXECUTION
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline] Orders File: orders.csv
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline] ==================================================
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline.ingestion] Ingested 22 rows from customers.csv
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline] Loaded 20 valid customers into database.
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline] Validator loaded with 20 valid customer records.
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline.ingestion] Ingested 114 rows from orders.csv
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline] [run_20261115_113016_e973e3] Validation complete: 103 valid, 10 quarantined, 2 duplicates detected.
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline] [run_20261115_113016_e973e3] Pipeline completed with status: PARTIAL_SUCCESS
+2026-11-15 17:00:16 [INFO] [ecommerce_pipeline] Metrics: {'run_id': 'run_20261115_113016_e973e3', 'pipeline_status': 'PARTIAL_SUCCESS', 'input_count': 114, 'valid_count': 103, 'rejected_count': 10, 'duplicate_count': 2, 'output_count': 103, 'execution_duration': 0.0471}

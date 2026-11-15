@@ -1,14 +1,14 @@
 {
-  "report_generated_at": "2026-11-15T10:51:10.382901+00:00",
+  "report_generated_at": "2026-11-15T11:30:16.948880+00:00",
   "execution_metrics": {
-    "run_id": "run_20261115_105110_9e9c92",
-    "pipeline_status": "SUCCESS",
-    "input_count": 1,
-    "valid_count": 1,
-    "rejected_count": 0,
-    "duplicate_count": 0,
-    "output_count": 1,
-    "execution_duration": 0.0307
+    "run_id": "run_20261115_113016_e973e3",
+    "pipeline_status": "PARTIAL_SUCCESS",
+    "input_count": 114,
+    "valid_count": 103,
+    "rejected_count": 10,
+    "duplicate_count": 2,
+    "output_count": 103,
+    "execution_duration": 0.0471
   },
   "reconciliation": {
     "reconciliation_checks": [
@@ -40,10 +40,23 @@
     ],
     "all_passed": true,
     "target_aggregates": {
-      "total_clean_orders": 1,
-      "total_order_amount_usd": 450.0,
-      "total_quarantined_records": 0
+      "total_clean_orders": 103,
+      "total_order_amount_usd": 27669.21,
+      "total_quarantined_records": 72
     },
-    "quarantine_breakdown": {}
+    "quarantine_breakdown": {
+      "ZERO_ORDER_AMOUNT: order_amount 0.0 must be greater than zero": 6,
+      "ORDER_BEFORE_CUSTOMER_CREATION: order_date '2020-01-01T00:00:00+00:00' is earlier than customer creation date '2025-01-02T10:00:00+00:00'": 6,
+      "NEGATIVE_ORDER_AMOUNT: order_amount -45.0 must be greater than zero": 6,
+      "MISSING_REQUIRED_FIELDS: Missing city": 6,
+      "MISSING_PRIMARY_KEY: order_id is missing or empty": 6,
+      "MISSING_CUSTOMER_ID: customer_id is missing or empty": 6,
+      "MALFORMED_TIMESTAMP: order_date or updated_at is not valid ISO-8601": 6,
+      "MALFORMED_ORDER_AMOUNT: Amount 'NaN_CORRUPT' is not a valid numeric value": 6,
+      "INVALID_ORDER_STATUS: Status 'PENDING_APPROVAL' is not in allowed statuses ['CANCELLED', 'DELIVERED', 'PLACED', 'SHIPPED']": 6,
+      "INVALID_EMAIL_FORMAT: Email 'invalid_email_format_without_at' is not a valid email address": 6,
+      "INVALID_CUSTOMER_REFERENCE: customer_id 'CUST_NONEXISTENT_99999' does not exist in customers master": 6,
+      "CONFLICTING_DUPLICATE_KEY: order_id 'ORD_000002' was already observed with differing attributes (original amount: 225.05, current amount: 9999.99)": 6
+    }
   }
 }
