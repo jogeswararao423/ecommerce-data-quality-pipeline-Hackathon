@@ -8,3 +8,4 @@ htmlcov/
 *.db
 output/*.db
 logs/*.log
+!logs/pipeline.log
