@@ -10,6 +10,58 @@
 
 ---
 
+## 🧭 Evaluator & Code Review Roadmap (Read File-by-File)
+
+To understand this project step-by-step from data arrival to target publishing, review the files in this exact logical order:
+
+```
+[1. Data Contracts]           [2. Core Pipeline Code]         [3. Test Suite]           [4. Outputs & Reports]
+data/raw/customers.csv   -->  src/config.py              -->  tests/test_ingestion.py   --> output/clean_orders.csv
+data/raw/orders.csv           src/ingestion.py                tests/test_validation.py  --> output/rejected_records.csv
+                              src/validation.py               tests/test_duplicates.py  --> output/quality_report.json
+                              src/transformation.py           tests/test_idempotency.py --> reports/performance_report.txt
+                              src/database.py                 tests/test_pipeline.py    --> reports/test_execution_report.txt
+                              src/monitoring.py
+                              src/pipeline.py
+```
+
+### Step 1: Read the Architecture & Data Contracts (Documentation)
+1. **[`README.md`](README.md)** *(Start here)*: High-level overview, architecture diagrams, and quickstart commands.
+2. **[`DATA_DICTIONARY.md`](DATA_DICTIONARY.md)**: Column-level schemas, primary/foreign keys, nullability, data types, and rejection codes.
+3. **[`DESIGN_NOTES.md`](DESIGN_NOTES.md)**: Engineering trade-offs (SQLite WAL vs distributed engines, UPSERT vs truncate-and-reload).
+4. **[`TEST_CASES.md`](TEST_CASES.md)**: 31-test-case verification matrix mapping test scenarios to expected behaviors.
+
+### Step 2: Inspect the Raw Input Datasets (Input Layer)
+5. **[`data/raw/customers.csv`](data/raw/customers.csv)**: Reference customer master records (`customer_id`, `name`, `email`, `city`, `created_at`).
+6. **[`data/raw/orders.csv`](data/raw/orders.csv)**: 114 orders containing 100 clean transactions + 14 deliberate edge cases.
+
+### Step 3: Trace the Pipeline Execution Flow (Code Layer)
+7. **[`src/config.py`](src/config.py)**: Central configuration defining paths, required schema columns, enum whitelists, and thresholds.
+8. **[`src/ingestion.py`](src/ingestion.py)**: **Pipeline Stage 1** — Reads CSVs safely, records 1-based source row numbers, and verifies schema completeness.
+9. **[`src/validation.py`](src/validation.py)**: **Pipeline Stage 2** — 7-stage validation engine enforcing null checks, bounds ($>0$), FK integrity, date logic, and duplicate detection.
+10. **[`src/transformation.py`](src/transformation.py)**: **Pipeline Stage 3** — Business transformations, high-value order flagging ($\ge \$1500$), and lineage stamping (`run_id`, `loaded_at`).
+11. **[`src/database.py`](src/database.py)**: **Pipeline Stage 4** — SQLite ACID transactions, idempotent UPSERT (`ON CONFLICT`), and state history logging (`order_history`).
+12. **[`src/monitoring.py`](src/monitoring.py)**: **Pipeline Stage 5** — Exports clean and quarantined CSVs, executes 5 SQL reconciliation checks, and generates `quality_report.json`.
+13. **[`src/data_generator.py`](src/data_generator.py)**: Reproducible synthetic generator (`seed=42`) with controlled error injection.
+14. **[`src/pipeline.py`](src/pipeline.py)**: Main CLI entry point orchestrating the entire end-to-end pipeline.
+
+### Step 4: Verify the Automated Tests (Testing Layer)
+15. **[`tests/test_ingestion.py`](tests/test_ingestion.py)**: Tests empty files (0 bytes), header-only files, and schema discrepancies.
+16. **[`tests/test_validation.py`](tests/test_validation.py)**: Tests nulls, negative amounts, bad timestamps, unapproved statuses, and bad FKs.
+17. **[`tests/test_transformation.py`](tests/test_transformation.py)**: Tests high-value flags and decimal rounding.
+18. **[`tests/test_duplicates.py`](tests/test_duplicates.py)**: Tests exact duplicates kept once and conflicting duplicates quarantined.
+19. **[`tests/test_pipeline.py`](tests/test_pipeline.py)**: Tests end-to-end pipeline, partial failures, late-arriving records, and database transaction rollback.
+20. **[`tests/test_idempotency.py`](tests/test_idempotency.py)**: Tests that rerunning identical batches produces zero duplicate rows.
+
+### Step 5: Review Generated Outputs & Audit Evidence (Proof Layer)
+21. **[`output/clean_orders.csv`](output/clean_orders.csv)**: Final clean, validated order dataset loaded into SQLite.
+22. **[`output/rejected_records.csv`](output/rejected_records.csv)**: Quarantined records preserving source line number, raw JSON, and failure reason.
+23. **[`output/quality_report.json`](output/quality_report.json)**: Audit telemetry + 5 automated SQL reconciliation assertions (`"all_passed": true`).
+24. **[`reports/performance_report.txt`](reports/performance_report.txt)**: Benchmark execution evidence across 1k, 10k, and 100k records (>10,200 rows/sec).
+25. **[`reports/test_execution_report.txt`](reports/test_execution_report.txt)**: Raw console execution output proving 31/31 tests passing.
+
+---
+
 ## 1. Project Overview & Business Problem
 
 In an e-commerce order management system, transactions and customer updates arrive continuously from web and mobile apps, partner feeds, and third-party gateways. Raw incoming records frequently contain:
