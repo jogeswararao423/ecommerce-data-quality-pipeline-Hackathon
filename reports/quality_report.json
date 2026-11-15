@@ -1,0 +1,49 @@
+{
+  "report_generated_at": "2026-11-15T10:51:10.382901+00:00",
+  "execution_metrics": {
+    "run_id": "run_20261115_105110_9e9c92",
+    "pipeline_status": "SUCCESS",
+    "input_count": 1,
+    "valid_count": 1,
+    "rejected_count": 0,
+    "duplicate_count": 0,
+    "output_count": 1,
+    "execution_duration": 0.0307
+  },
+  "reconciliation": {
+    "reconciliation_checks": [
+      {
+        "check": "No duplicate order IDs in clean_orders",
+        "status": "PASSED",
+        "details": "0 duplicates found"
+      },
+      {
+        "check": "No null primary keys in clean_orders",
+        "status": "PASSED",
+        "details": "0 null primary keys found"
+      },
+      {
+        "check": "No negative or zero order amounts in clean_orders",
+        "status": "PASSED",
+        "details": "0 non-positive amounts found"
+      },
+      {
+        "check": "No orphaned customer foreign keys in clean_orders",
+        "status": "PASSED",
+        "details": "0 orphans found"
+      },
+      {
+        "check": "No invalid order statuses in clean_orders",
+        "status": "PASSED",
+        "details": "0 invalid statuses found"
+      }
+    ],
+    "all_passed": true,
+    "target_aggregates": {
+      "total_clean_orders": 1,
+      "total_order_amount_usd": 450.0,
+      "total_quarantined_records": 0
+    },
+    "quarantine_breakdown": {}
+  }
+}

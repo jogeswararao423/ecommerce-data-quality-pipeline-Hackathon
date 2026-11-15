@@ -1,0 +1,2 @@
+order_id,customer_id,order_amount,order_status,order_date,updated_at,is_high_value,run_id,loaded_at
+ORD_LATE_1,CUST_TEST_1,450.0,DELIVERED,2025-06-01T10:00:00+00:00,2025-06-01T10:00:00+00:00,0,run_20261115_105110_9e9c92,2026-11-15T10:51:10.359273+00:00
